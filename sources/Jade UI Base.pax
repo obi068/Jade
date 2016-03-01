@@ -10,6 +10,7 @@ package basicScriptAt: #postinstall put: 'JadeTextStyles default resetColors.'.
 package classNames
 	add: #CodeSourcePresenter;
 	add: #JadeBrowserPresenter;
+	add: #JadeEditToolBarPresenter;
 	add: #JadePresenter;
 	add: #JadePresenterA;
 	add: #JadeShell;
@@ -59,6 +60,11 @@ Presenter subclass: #JadePresenter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
+JadePresenter subclass: #JadeEditToolBarPresenter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
 JadePresenter subclass: #JadePresenterA
 	instanceVariableNames: ''
 	classVariableNames: ''
@@ -70,10 +76,10 @@ JadePresenter subclass: #JadeToolsToolBarPresenter
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 JadePresenterA subclass: #CodeSourcePresenter
-	instanceVariableNames: 'documentPresenter menuTitle'
+	instanceVariableNames: 'documentPresenter menuTitle toolbarPresenter'
 	classVariableNames: 'CodeFont'
 	poolDictionaries: ''
-	classInstanceVariableNames: ''!
+	classInstanceVariableNames: 'textPresenterClass'!
 JadePresenterA subclass: #JadeBrowserPresenter
 	instanceVariableNames: ''
 	classVariableNames: ''

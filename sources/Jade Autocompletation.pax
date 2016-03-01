@@ -5,6 +5,7 @@ package paxVersion: 1;
 
 package basicPackageVersion: '0.014'.
 
+package basicScriptAt: #postinstall put: 'CodeSourcePresenter textPresenterClass: JadeAutoTextPresenter.'.
 
 package classNames
 	add: #JadeAutocompletationConfiguration;
@@ -20,9 +21,9 @@ package classNames
 	yourself.
 
 package methodNames
-	add: #CodeSourcePresenter -> #createComponents;
 	add: #JadePresenterA -> #registry;
 	add: #JadeTextDocument -> #registry;
+	add: #JadeTranscript -> #autocompletion;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -42,6 +43,7 @@ package setPrerequisites: (IdentitySet new
 	add: '..\..\..\Core\Object Arts\Dolphin\MVP\Presenters\Text\Dolphin Text Presenter';
 	add: '..\..\..\Core\Object Arts\Dolphin\MVP\Type Converters\Dolphin Type Converters';
 	add: '..\..\..\Core\Object Arts\Dolphin\MVP\Models\Value\Dolphin Value Models';
+	add: 'Jade Transcript';
 	add: 'Jade UI Base';
 	add: '..\..\..\Core\Object Arts\Dolphin\System\Compiler\Smalltalk Parser';
 	yourself).
@@ -106,16 +108,6 @@ JadeTextPresenter subclass: #JadeAutoTextPresenter
 
 "Loose Methods"!
 
-!CodeSourcePresenter methodsFor!
-
-createComponents
-
-	super createComponents.
-	documentPresenter := self add: JadeAutoTextPresenter new name: 'document'.
-	self updateCodeFont.
-! !
-!CodeSourcePresenter categoriesFor: #createComponents!public! !
-
 !JadePresenterA methodsFor!
 
 registry
@@ -129,6 +121,14 @@ registry
 
 	^JadeAutocompletationRegistry default! !
 !JadeTextDocument categoriesFor: #registry!autocompletion!private! !
+
+!JadeTranscript methodsFor!
+
+autocompletion
+
+	JadeAutocompletationConfigurationShell show.
+! !
+!JadeTranscript categoriesFor: #autocompletion!event handling!public! !
 
 "End of package definition"!
 

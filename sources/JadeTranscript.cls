@@ -10,11 +10,6 @@ JadeTranscript comment: ''!
 !JadeTranscript categoriesForClass!Unclassified! !
 !JadeTranscript methodsFor!
 
-autocompletion
-
-	JadeAutocompletationConfigurationShell show.
-!
-
 browseMonticelloRepositories
 
 	self jadeBrowseMonticello.
@@ -162,7 +157,6 @@ updateCaption
 
 	self caption: (gciSession titleBarFor: 'Transcript').
 ! !
-!JadeTranscript categoriesFor: #autocompletion!event handling!public! !
 !JadeTranscript categoriesFor: #browseMonticelloRepositories!event handling!public! !
 !JadeTranscript categoriesFor: #createComponents!public! !
 !JadeTranscript categoriesFor: #createSchematicWiring!public! !

@@ -48,7 +48,6 @@ package setPrerequisites: (IdentitySet new
 	add: '..\..\..\Core\Object Arts\Dolphin\MVP\Models\Value\Dolphin Value Models';
 	add: 'GemStone Objects';
 	add: 'GemStone Session';
-	add: 'Jade Autocompletation';
 	add: 'Jade Inspector';
 	add: 'Jade UI Base';
 	yourself).
