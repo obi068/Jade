@@ -7,7 +7,6 @@ package basicPackageVersion: '0.277'.
 
 
 package classNames
-	add: #JadeAutoSystemBrowserPresenter;
 	add: #JadeFindClassDialog;
 	add: #JadeSystemBrowser;
 	add: #JadeSystemBrowserPresenter;
@@ -172,7 +171,6 @@ package setPrerequisites: (IdentitySet new
 	add: '..\..\..\Core\Object Arts\Dolphin\MVP\Type Converters\Dolphin Type Converters';
 	add: '..\..\..\Core\Object Arts\Dolphin\MVP\Models\Value\Dolphin Value Models';
 	add: 'GemStone Session';
-	add: 'Jade Autocompletation';
 	add: 'Jade Class Browser';
 	add: 'Jade Inspector';
 	add: 'Jade Method Browser';
@@ -190,11 +188,6 @@ JadeBrowserPresenter subclass: #JadeSystemBrowserPresenter
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JadeSystemBrowserPresenter subclass: #JadeAutoSystemBrowserPresenter
-	instanceVariableNames: 'lastGsShape'
-	classVariableNames: ''
-	poolDictionaries: ''
-	classInstanceVariableNames: ''!
 JadeValueDialog subclass: #JadeFindClassDialog
 	instanceVariableNames: 'classListPresenter nameEntryPresenter availableClasses'
 	classVariableNames: ''
@@ -209,7 +202,7 @@ JadeShell subclass: #JadeSystemBrowser
 	instanceVariableNames: 'cardsPresenter roundTripCount'
 	classVariableNames: ''
 	poolDictionaries: ''
-	classInstanceVariableNames: ''!
+	classInstanceVariableNames: 'systemBrowserPresenterClass'!
 
 "Global Aliases"!
 

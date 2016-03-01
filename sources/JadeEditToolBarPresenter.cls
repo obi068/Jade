@@ -79,7 +79,7 @@ queryCommand: query
 
 redo
 
-	self halt.
+	parentPresenter documentPresenter view redo.
 !
 
 replace
@@ -94,7 +94,7 @@ save
 
 undo
 
-	self halt.
+	parentPresenter documentPresenter view undo.
 ! !
 !JadeEditToolBarPresenter categoriesFor: #clearSelection!clipboard operations!public! !
 !JadeEditToolBarPresenter categoriesFor: #copySelection!clipboard operations!public! !

@@ -5,7 +5,9 @@ package paxVersion: 1;
 
 package basicPackageVersion: '0.014'.
 
-package basicScriptAt: #postinstall put: 'CodeSourcePresenter textPresenterClass: JadeAutoTextPresenter.'.
+package basicScriptAt: #postinstall put: 'CodeSourcePresenter textPresenterClass: JadeAutoTextPresenter.
+JadeSystemBrowser systemBrowserPresenterClass: JadeAutoSystemBrowserPresenter.
+'.
 
 package classNames
 	add: #JadeAutocompletationConfiguration;
@@ -13,6 +15,7 @@ package classNames
 	add: #JadeAutocompletationConfigurationShell;
 	add: #JadeAutocompletationRegistry;
 	add: #JadeAutoMap;
+	add: #JadeAutoSystemBrowserPresenter;
 	add: #JadeAutoTextPresenter;
 	add: #JadeGsClassShape;
 	add: #JadeMapAutocompletationPresenter;
@@ -43,6 +46,7 @@ package setPrerequisites: (IdentitySet new
 	add: '..\..\..\Core\Object Arts\Dolphin\MVP\Presenters\Text\Dolphin Text Presenter';
 	add: '..\..\..\Core\Object Arts\Dolphin\MVP\Type Converters\Dolphin Type Converters';
 	add: '..\..\..\Core\Object Arts\Dolphin\MVP\Models\Value\Dolphin Value Models';
+	add: 'Jade System Browser';
 	add: 'Jade Transcript';
 	add: 'Jade UI Base';
 	add: '..\..\..\Core\Object Arts\Dolphin\System\Compiler\Smalltalk Parser';
@@ -89,6 +93,11 @@ JadePresenterA subclass: #JadeParamAutocompletationPresenter
 	classInstanceVariableNames: ''!
 JadePresenterA subclass: #JadeRegistryPresenter
 	instanceVariableNames: 'registryPresenter'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JadeSystemBrowserPresenter subclass: #JadeAutoSystemBrowserPresenter
+	instanceVariableNames: 'lastGsShape'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!

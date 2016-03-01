@@ -133,12 +133,6 @@ labelOf: oldString editedTo: newString accept: aValueHolder
 	SessionManager current pause.
 !
 
-model: anObject
-
-	anObject class == GciSession ifTrue: [self error: 'should call gciSession: method'].
-	super model: anObject.
-!
-
 onDrag: anInternalDragDropSession 
 
 	self subclassResponsibility.
@@ -333,7 +327,6 @@ userSelection
 !JadePresenterA categoriesFor: #labelEditPresenters!label edit!public! !
 !JadePresenterA categoriesFor: #labelOf:changedTo:!label edit!public! !
 !JadePresenterA categoriesFor: #labelOf:editedTo:accept:!label edit!public! !
-!JadePresenterA categoriesFor: #model:!public! !
 !JadePresenterA categoriesFor: #onDrag:!drag & drop!public! !
 !JadePresenterA categoriesFor: #onDragClassCategoriesOver:!drag & drop!public! !
 !JadePresenterA categoriesFor: #onDragClassesOver:!drag & drop!public! !
