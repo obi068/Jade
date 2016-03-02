@@ -1,0 +1,88 @@
+"Filed out from Dolphin Smalltalk 7"!
+
+TestCase subclass: #JadeTest
+	instanceVariableNames: 'gciSession transcriptShell'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JadeTest guid: (GUID fromString: '{C02B6503-FFD6-49CF-A51E-8A389FB7E5F8}')!
+JadeTest comment: 'Transcript:
+	Transcript show: ''Transcript test''.	"Copy, Delete"
+My Session:
+	UserGlobals at: #''James'' put: 42.	"Commit"
+	UserGlobals at: #''James''.
+	UserGlobals at: #''James'' put: 24.
+	UserGlobals at: #''James''.				"Abort"
+	UserGlobals at: #''James''.
+All Sessions:
+	"Menus"
+	"Auto-update"
+Workspace:
+	2 + 3.	"Display, Execute, Inspect"
+	2 -> 3.	"Inspect"
+		self key.
+		self value.
+User Browser:
+	"New user: Seaside"
+	"Missing edit of Details & Password"
+'!
+!JadeTest categoriesForClass!SUnit! !
+!JadeTest methodsFor!
+
+gciSession
+
+	^gciSession ifNil: [gciSession := self transcriptShell gciSession].
+	!
+
+loginShell
+
+	|  list |
+	list := JadeLoginShell allInstances.
+	list isEmpty ifTrue: [
+		| additionalTools jadeTool |
+		additionalTools := Smalltalk developmentSystem systemFolder childrenOf: Smalltalk developmentSystem additionalToolsFolder.
+		jadeTool := additionalTools detect: [:each | each description = 'Jade Login for GemStone/S'].
+		jadeTool openBlock value: nil value: nil.
+		list := JadeLoginShell allInstances.
+		self assert: list size == 1.
+	].
+	^list at: 1.
+!
+
+testTranscriptToolbarAbort
+
+	| session toolbar abortButton |
+	session := self gciSession
+		executeString: 'UserGlobals removeKey: #''Jade_test'' ifAbsent: []';
+		commit;
+		executeString: 'UserGlobals at: #''Jade_test'' put: 42';
+		yourself.
+	self assert: (session executeString: 'Jade_test') == 42.
+	toolbar := self transcriptShell toolbarPresenter toolbarPresenter view.
+	self assert: toolbar notNil.
+	
+	1 to: toolbar size do: [:i || item |
+		item := toolbar itemAtIndex: i.
+		(item isDivider not and: [item command == #'abort']) ifTrue: [abortButton := item].
+	].
+	self assert: abortButton notNil.
+
+!
+
+transcriptShell
+
+	^transcriptShell ifNil: [
+		| list |
+		list := JadeTranscript allInstances.
+		list isEmpty ifTrue: [
+			self loginShell login.
+			list := JadeTranscript allInstances.
+		].
+		transcriptShell := list first.
+	].
+! !
+!JadeTest categoriesFor: #gciSession!public! !
+!JadeTest categoriesFor: #loginShell!public! !
+!JadeTest categoriesFor: #testTranscriptToolbarAbort!public! !
+!JadeTest categoriesFor: #transcriptShell!public! !
+

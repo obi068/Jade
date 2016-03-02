@@ -143,6 +143,10 @@ sleepAndCommit
 	].
 !
 
+toolbarPresenter
+
+	^toolbarPresenter!
+
 turnAutoMigrateOff
 
 	gciSession executeString: 'MCPlatformSupport autoMigrate: false'.
@@ -170,6 +174,7 @@ updateCaption
 !JadeTranscript categoriesFor: #queryCommand:!public!updating! !
 !JadeTranscript categoriesFor: #resetCursor!event handling!public! !
 !JadeTranscript categoriesFor: #sleepAndCommit!event handling!public! !
+!JadeTranscript categoriesFor: #toolbarPresenter!public! !
 !JadeTranscript categoriesFor: #turnAutoMigrateOff!event handling!public! !
 !JadeTranscript categoriesFor: #turnAutoMigrateOn!event handling!public! !
 !JadeTranscript categoriesFor: #updateCaption!public! !

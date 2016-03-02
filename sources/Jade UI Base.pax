@@ -71,7 +71,7 @@ JadePresenter subclass: #JadePresenterA
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
 JadePresenter subclass: #JadeToolsToolBarPresenter
-	instanceVariableNames: ''
+	instanceVariableNames: 'toolbarPresenter'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!

@@ -5,7 +5,7 @@ package paxVersion: 1;
 
 
 package classNames
-	add: #JadeLoginTest;
+	add: #JadeTest;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -25,8 +25,8 @@ package!
 
 "Class Definitions"!
 
-TestCase subclass: #JadeLoginTest
-	instanceVariableNames: ''
+TestCase subclass: #JadeTest
+	instanceVariableNames: 'gciSession transcriptShell'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
