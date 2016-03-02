@@ -17,9 +17,11 @@ package classNames
 	add: #JadeTextDocument;
 	add: #JadeTextPresenter;
 	add: #JadeTextStyles;
+	add: #JadeToolbarPresenter;
 	add: #JadeToolsToolBarPresenter;
 	add: #JadeValueDialog;
 	add: #JadeWorkspace;
+	add: #SuccessNotification;
 	add: #ToolbarA;
 	yourself.
 
@@ -55,13 +57,13 @@ Object subclass: #JadeTextStyles
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: 'default'!
-Presenter subclass: #JadePresenter
-	instanceVariableNames: 'gciSession'
+Notification subclass: #SuccessNotification
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JadePresenter subclass: #JadeEditToolBarPresenter
-	instanceVariableNames: ''
+Presenter subclass: #JadePresenter
+	instanceVariableNames: 'gciSession'
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
@@ -70,7 +72,7 @@ JadePresenter subclass: #JadePresenterA
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
-JadePresenter subclass: #JadeToolsToolBarPresenter
+JadePresenter subclass: #JadeToolbarPresenter
 	instanceVariableNames: 'toolbarPresenter'
 	classVariableNames: ''
 	poolDictionaries: ''
@@ -81,6 +83,16 @@ JadePresenterA subclass: #CodeSourcePresenter
 	poolDictionaries: ''
 	classInstanceVariableNames: 'textPresenterClass'!
 JadePresenterA subclass: #JadeBrowserPresenter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JadeToolbarPresenter subclass: #JadeEditToolBarPresenter
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+JadeToolbarPresenter subclass: #JadeToolsToolBarPresenter
 	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''

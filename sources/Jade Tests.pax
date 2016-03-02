@@ -17,7 +17,11 @@ package globalAliases: (Set new
 package setPrerequisites: (IdentitySet new
 	add: '..\..\..\Core\Object Arts\Dolphin\Base\Dolphin';
 	add: 'Jade Login';
+	add: 'Jade System Browser';
 	add: 'Jade Transcript';
+	add: 'Jade UI Base';
+	add: 'Jade User Browser';
+	add: 'Monticello';
 	add: '..\..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
 	yourself).
 

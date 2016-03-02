@@ -1,7 +1,7 @@
 "Filed out from Dolphin Smalltalk 7"!
 
-JadePresenter subclass: #JadeToolsToolBarPresenter
-	instanceVariableNames: 'toolbarPresenter'
+JadeToolbarPresenter subclass: #JadeToolsToolBarPresenter
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!
@@ -13,23 +13,17 @@ JadeToolsToolBarPresenter comment: ''!
 abort
 
 	gciSession abort.
-	Sound informationBeep.
+	SuccessNotification signal.
 !
 
 commit
 
 	gciSession commit ifTrue: [
-		Sound informationBeep.
+		SuccessNotification signal.
 	] ifFalse: [
 		MessageBox warning: 'Commit failed!!'.
 	].
 !
-
-createComponents
-
-	super createComponents.
-	toolbarPresenter := self add: Presenter new name: 'toolbar'.
-self halt.!
 
 fileNew
 
@@ -39,17 +33,11 @@ fileNew
 fileOpen
 
 	JadeWorkspace openOnSession: gciSession.
-!
-
-toolbarPresenter
-
-	^toolbarPresenter! !
+! !
 !JadeToolsToolBarPresenter categoriesFor: #abort!Jade!public! !
 !JadeToolsToolBarPresenter categoriesFor: #commit!public! !
-!JadeToolsToolBarPresenter categoriesFor: #createComponents!public! !
 !JadeToolsToolBarPresenter categoriesFor: #fileNew!public! !
 !JadeToolsToolBarPresenter categoriesFor: #fileOpen!public! !
-!JadeToolsToolBarPresenter categoriesFor: #toolbarPresenter!public! !
 
 !JadeToolsToolBarPresenter class methodsFor!
 

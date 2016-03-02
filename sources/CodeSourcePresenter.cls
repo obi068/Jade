@@ -344,6 +344,14 @@ subMenuPresenter
 	^documentPresenter.
 !
 
+textPresenter
+
+	^documentPresenter!
+
+toolbarPresenter
+
+	^toolbarPresenter!
+
 update
 
 	self subclassResponsibility.
@@ -396,6 +404,8 @@ updateCodeFont
 !CodeSourcePresenter categoriesFor: #showSelection!edit!private! !
 !CodeSourcePresenter categoriesFor: #subMenuName!menus!public! !
 !CodeSourcePresenter categoriesFor: #subMenuPresenter!menus!public! !
+!CodeSourcePresenter categoriesFor: #textPresenter!public! !
+!CodeSourcePresenter categoriesFor: #toolbarPresenter!public! !
 !CodeSourcePresenter categoriesFor: #update!public! !
 !CodeSourcePresenter categoriesFor: #updateCodeFont!public! !
 
