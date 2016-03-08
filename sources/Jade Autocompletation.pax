@@ -5,8 +5,10 @@ package paxVersion: 1;
 
 package basicPackageVersion: '0.014'.
 
-package basicScriptAt: #postinstall put: 'CodeSourcePresenter textPresenterClass: JadeAutoTextPresenter.
-JadeSystemBrowser systemBrowserPresenterClass: JadeAutoSystemBrowserPresenter.
+package basicScriptAt: #postinstall put: 'CodeSourcePresenter withAllSubclassesDo: [:each | 
+	each textPresenterClass: JadeAutoTextPresenter].
+JadeSystemBrowser withAllSubclassesDo: [:each | 
+	each systemBrowserPresenterClass: JadeAutoSystemBrowserPresenter].
 '.
 
 package classNames
