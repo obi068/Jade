@@ -28,9 +28,10 @@ ProgressDialog showModalWhile: [:progress |
 			value: percent;
 			text: 'Loading package: ' , name;
 			yourself.
-		PackageManager current install: name.
+		(File exists: name) ifTrue: [PackageManager current install: name].
 	].
 ].
+Transcript clear.
 (Delay forMilliseconds: 200) wait.
 Cursor wait showWhile: [
 	SourceManager default compressSources.

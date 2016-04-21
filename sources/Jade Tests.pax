@@ -6,6 +6,7 @@ package paxVersion: 1;
 
 package classNames
 	add: #JadeTest;
+	add: #JGFormatterTest;
 	yourself.
 
 package binaryGlobalNames: (Set new
@@ -19,9 +20,8 @@ package setPrerequisites: (IdentitySet new
 	add: 'Jade Login';
 	add: 'Jade System Browser';
 	add: 'Jade Transcript';
-	add: 'Jade UI Base';
-	add: 'Jade User Browser';
-	add: 'Monticello';
+	add: '..\..\..\Core\Contributions\Refactory\Refactoring Browser\Parser\RBParser';
+	add: '..\Core\Contributions\Refactory\Refactoring Browser\Tests\RBTests';
 	add: '..\..\..\Core\Contributions\Camp Smalltalk\SUnit\SUnit';
 	yourself).
 
@@ -31,6 +31,11 @@ package!
 
 TestCase subclass: #JadeTest
 	instanceVariableNames: 'gciSession transcriptShell'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+TestCase subclass: #JGFormatterTest
+	instanceVariableNames: ''
 	classVariableNames: ''
 	poolDictionaries: ''
 	classInstanceVariableNames: ''!

@@ -116,7 +116,7 @@ editDelete
 
 editFind
 
-	documentPresenter view find.
+	documentPresenter view editFind.
 	self showSelection.
 !
 
